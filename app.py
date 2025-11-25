@@ -1,4 +1,3 @@
-%%writefile app.py
 import streamlit as st
 from PIL import Image, ImageEnhance, ImageDraw, ImageOps, ImageFilter, ImageFont
 from rembg import remove
@@ -113,4 +112,5 @@ elif menu == "Filter":
         f = st.selectbox("Pilih", ["Grayscale", "Blur"])
         if f=="Grayscale": im=im.convert("L")
         elif f=="Blur": im=im.filter(ImageFilter.GaussianBlur(2))
+
         st.image(im); st.download_button("Download", convert_image(im), "edit.png")
